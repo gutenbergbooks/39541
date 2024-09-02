@@ -1,0 +1,971 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+  /*<![CDATA[*/
+  /* 
+  Project Gutenberg common docutils stylesheet.
+
+  This stylesheet contains styles common to HTML and EPUB.  Put styles
+  that are specific to HTML and EPUB into their relative stylesheets.
+
+  :Author: Marcello Perathoner (webmaster@gutenberg.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  This stylesheet is based on:
+
+  :Author: David Goodger (goodger@python.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  Default cascading style sheet for the HTML output of Docutils.
+
+  */
+
+  /* ADE 1.7.2 chokes on !important and throws all css out. */
+
+  /* FONTS */
+
+  .italics    { font-style: italic }
+  .no-italics { font-style: normal }
+
+  .bold       { font-weight: bold }
+  .no-bold    { font-weight: normal }
+
+  .small-caps { } /* Epub needs italics */
+  .gesperrt   { } /* Epub needs italics */
+  .antiqua    { font-style: italic } /* what else can we do ? */
+  .monospaced { font-family: monospace }
+
+  .smaller    { font-size: smaller }
+  .larger     { font-size: larger }
+
+  .xx-small   { font-size: xx-small }
+  .x-small    { font-size: x-small }
+  .small      { font-size: small }
+  .medium     { font-size: medium }
+  .large      { font-size: large }
+  .x-large    { font-size: x-large }
+  .xx-large   { font-size: xx-large }
+
+  .text-transform-uppercase { text-transform: uppercase }
+  .text-transform-lowercase { text-transform: lowercase }
+  .text-transform-none      { text-transform: none }
+
+  .red        { color: red }
+  .green      { color: green }
+  .blue       { color: blue }
+  .yellow     { color: yellow }
+  .white      { color: white }
+  .gray       { color: gray }
+  .black      { color: black }
+
+  /* ALIGN */
+
+  .left       { text-align: left }
+  .center     { text-align: center }
+  .right      { text-align: right }
+  .justify    { text-align: justify }
+
+  /* LINE HEIGHT */
+
+  body        { line-height: 1.5 }
+  p           { margin: 0; 
+              text-indent: 2em }
+
+  /* PAGINATION */
+
+  .title, .subtitle     { page-break-after:  avoid }
+
+  .container, .title, .subtitle, #pg-header            
+                      { page-break-inside: avoid }
+
+  /* SECTIONS */
+
+  body         { text-align: justify }
+
+  p.pfirst,
+  p.center,
+  p.right,
+  div.center p,
+  div.right p,
+  p.noindent   { text-indent: 0 }
+
+  .boxed         { border: 1px solid black; padding: 1em }
+  .topic, .note  { margin: 5% 0; border: 1px solid black; padding: 1em }
+  div.section    { clear: both }
+
+  div.line-block       { margin: 1.5em 0 }  /* same leading as p */
+  div.line-block.inner { margin: 0 0 0 10% }
+  div.line             { margin-left: 20%; text-indent: -20%; }
+  .line-block.noindent div.line { margin-left: 0; text-indent: 0; }
+
+  hr.docutils          { margin: 1.5em 40%; border: none; border-bottom: 1px solid black; }
+  div.transition       { margin: 1.5em 0 }
+
+  .vfill, .vspace      { border: 0px solid white }
+
+  .title               { margin: 1.5em 0 }
+  .title.with-subtitle { margin-bottom: 0 }
+  .subtitle            { margin: 1.5em 0 }
+
+  /* header font style */
+  /* http://dev.w3.org/csswg/css3-fonts/#propdef-font-size */
+
+  h1.title                        { font-size: 200%; }  /* for book title only */
+  h2.title, p.subtitle.level-1    { font-size: 150%; margin-top: 4.5em;  margin-bottom: 2em }
+  h3.title, p.subtitle.level-2    { font-size: 120%; margin-top: 2.25em; margin-bottom: 1.25em }
+  h4.title, p.subtitle.level-3    { font-size: 100%; margin-top: 1.5em;  margin-bottom: 1.5em;  font-weight: bold; }
+  h5.title, p.subtitle.level-4    { font-size:  89%; margin-top: 1.87em; margin-bottom: 1.69em; font-style: italic; }
+  h6.title, p.subtitle.level-5    { font-size:  60%; margin-top: 3.5em;  margin-bottom: 2.5em }
+
+  /* title page */
+
+  h1.title, p.subtitle.level-1,
+  h2.title, p.subtitle.level-2    { text-align: center }
+
+  #pg-header,
+  h1.document-title               { margin: 10% 0 5% 0 }
+  p.document-subtitle             { margin:  0  0 5% 0 }
+
+  /* PG header and footer */
+  #pg-machine-header { }
+  #pg-produced-by { }
+
+  li.toc-entry            { list-style-type: none }
+  ul.open li, ol.open li  { margin-bottom: 1.5em }
+
+  .attribution            { margin-top: 1.5em }
+
+  .example-rendered { 
+    margin: 1em 5%; border: 1px dotted red;  padding: 1em; background-color: #ffd }
+  .literal-block.example-source   { 
+    margin: 1em 5%; border: 1px dotted blue; padding: 1em; background-color: #eef }
+
+  /* DROPCAPS */
+
+  /* BLOCKQUOTES */
+
+  blockquote { margin: 1.5em 10% }
+
+  blockquote.epigraph { }
+
+  blockquote.highlights { }
+
+  div.local-contents { margin: 1.5em 10% }
+
+  div.abstract { margin: 3em 10% }
+  div.caption  { margin: 1.5em 10%; text-align: center; font-style: italic }
+  div.legend   { margin: 1.5em 10% }
+
+  .hidden { display: none }
+
+  .invisible { visibility: hidden; color: white } /* white: mozilla print bug */
+
+  a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+  dl.docutils dd {
+  margin-bottom: 0.5em }
+
+  div.figure { margin-top: 3em; margin-bottom: 3em }
+
+  img { max-width: 100% }
+
+  div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+  div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+  div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+  ol.simple, ul.simple { margin: 1.5em 0 }
+
+  ol.toc-list,    ul.toc-list    { padding-left:  0  }
+  ol ol.toc-list, ul ul.toc-list { padding-left:  5% }
+
+  ol.arabic {
+  list-style: decimal }
+
+  ol.loweralpha {
+  list-style: lower-alpha }
+
+  ol.upperalpha {
+  list-style: upper-alpha }
+
+  ol.lowerroman {
+  list-style: lower-roman }
+
+  ol.upperroman {
+  list-style: upper-roman }
+
+  p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+  p.label {
+  white-space: nowrap }
+
+  p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+  p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+  p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  p.topic-title, p.admonition-title {
+  font-weight: bold }
+
+  pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+  .literal-block, .doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em; }
+
+  span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+  span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  span.interpreted {
+  font-family: sans-serif }
+
+  span.option {
+  white-space: nowrap }
+
+  span.pre {
+  white-space: pre }
+
+  span.problematic {
+  color: red }
+
+  span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 100% }
+
+  table { margin-top: 1.5em; margin-bottom: 1.5em; border-spacing: 0 }
+  table.align-left, table.align-right { margin-top: 0 }
+
+  table.table                { border-collapse: collapse; }
+
+  table.table.hrules-table thead          { border: 1px solid black; border-width: 2px 0 0 }
+  table.table.hrules-table tbody          { border: 1px solid black; border-width: 2px 0 }
+  table.table.hrules-rows  tr             { border: 1px solid black; border-width: 0 0 1px }
+  table.table.hrules-rows  tr.last        { border-width: 0 }
+  table.table.hrules-rows  td, 
+  table.table.hrules-rows  th             { padding: 1ex 1em; vertical-align: middle }
+
+  table.table tr             { border-width: 0 }
+  table.table td, 
+  table.table th             { padding: 0.5ex 1em }
+  table.table tr.first td    { padding-top: 1ex }
+  table.table tr.last td     { padding-bottom: 1ex }
+  table.table tr.first th    { padding-top: 1ex }
+  table.table tr.last th     { padding-bottom: 1ex }
+
+
+  table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+  table.docinfo {
+  margin: 3em 4em }
+
+  table.docutils { }
+
+  tr.footnote.footnote td, tr.footnote.footnote th { 
+  padding: 0 0.5em 1.5em;
+  }
+
+  table.docutils td, table.docutils th,
+  table.docinfo td, table.docinfo th {
+  padding: 0 0.5em;
+  vertical-align: top }
+
+  table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+  /* used to remove borders from tables and images */
+  .borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+  table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "!important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 } /* FIXME: was !important */
+
+  h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+  h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+  ul.auto-toc {
+  list-style-type: none }
+  /*]]>*/
+  </style>
+  <style type="text/css">
+  /*<![CDATA[*/
+  /* 
+  Project Gutenberg HTML docutils stylesheet.
+
+  This stylesheet contains styles specific to HTML.
+  */
+
+  /* FONTS */
+
+  /* em                { font-style: normal }
+  strong            { font-weight: normal } */
+
+  .small-caps       { font-variant: small-caps }
+  .gesperrt         { letter-spacing: 0.1em }
+
+  /* ALIGN */
+
+  .align-left       { clear: left;
+                    float: left;
+                    margin-right: 1em }
+
+  .align-right      { clear: right;
+                    float: right;
+                    margin-left: 1em }
+
+  .align-center     { margin-left: auto;
+                    margin-right: auto }
+
+  div.shrinkwrap    { display: table; }
+
+  /* SECTIONS */
+
+  body              { margin: 5% 10% 5% 10% }
+
+  /* compact list items containing just one p */
+  li p.pfirst       { margin-top: 0; margin-bottom: 0 } 
+
+  .first            { margin-top: 0 !important; 
+                    text-indent: 0 !important } 
+  .last             { margin-bottom: 0 !important }
+
+  span.dropcap      { float: left; margin: 0 0.1em 0 0; line-height: 1 }
+  img.dropcap       { float: left; margin: 0 0.5em 0 0; max-width: 25% }
+  span.dropspan     { font-variant: small-caps }
+
+  .no-page-break    { page-break-before: avoid !important }
+
+  /* PAGINATION */
+
+  @media screen {
+   .coverpage, .frontispiece, .titlepage, .verso, .dedication, .plainpage
+                       { margin: 10% 0; }
+
+   div.clearpage, div.cleardoublepage
+                       { margin: 10% 0; border: none; border-top: 1px solid gray; }
+
+   .vfill              { margin:  5% 10% }
+  }
+
+  @media print {
+   div.clearpage       { page-break-before: always; padding-top: 10% }
+   div.cleardoublepage { page-break-before: right;  padding-top: 10%  }
+
+   .vfill              { margin-top: 20% }
+   h2.title            { margin-top: 20% }
+  }
+
+  /*]]>*/
+  </style>
+  <title>Donna Paola</title>
+  <style type="text/css">
+  /*<![CDATA[*/
+  .pageno       { position: absolute; right: 95%; font: medium sans-serif; text-indent: 0 }
+  .pageno:after { color: gray; content: '[' attr(title) ']' }
+  .lineno       { position: absolute; left:  95%; font: medium sans-serif; text-indent: 0 }
+  .lineno:after { color: gray; content: '[' attr(title) ']' }
+  .toc-pageref  { float: right }
+  pre           { font-family: monospace; font-size: 0.9em; white-space: pre-wrap }
+  /*]]>*/
+  </style>
+</head>
+<body>
+  <div class="document" id="donna-paola">
+    <h1 class="document-title level-1 pfirst title">Donna Paola</h1><!-- -*- encoding: utf-8 -*- -->
+    <!-- -*- encoding: utf-8 -*- -->
+    <div class="align-None container coverpage">
+      <div class="align-center auto-scaled figure" style="width: 58%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/cover.jpg" /></div>
+    </div>
+    <div class="align-None center container titlepage white-space-pre-line">
+      <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">Piccola collezione «Margherita»</em></p>
+      <div class="vspace white-space-pre-line" style="height: 2em"></div>
+      <p class="pfirst white-space-pre-line"><span class="large white-space-pre-line">MATILDE SERAO</span></p>
+      <div class="vspace white-space-pre-line" style="height: 2em"></div>
+      <p class="pfirst white-space-pre-line"><span class="small-caps white-space-pre-line xx-large">Donna Paola</span></p>
+      <div class="vspace white-space-pre-line" style="height: 2em"></div>
+      <p class="pfirst white-space-pre-line">Disegni di <span class="small-caps white-space-pre-line">A. Terzi</span></p>
+      <p class="pnext white-space-pre-line">Incisioni del prof. <span class="small-caps white-space-pre-line">Orlando</span></p>
+      <div class="vspace white-space-pre-line" style="height: 2em"></div>
+      <p class="pfirst white-space-pre-line"><span class="gesperrt white-space-pre-line">ROMA</span></p>
+      <p class="pnext white-space-pre-line"><span class="small-caps white-space-pre-line">Enrico Voghera, Editore</span></p>
+      <p class="pnext white-space-pre-line"><span class="italics small white-space-pre-line">Via Nazionale, 201</span></p>
+      <p class="pnext white-space-pre-line">—</p>
+      <p class="pnext white-space-pre-line"><span class="small white-space-pre-line">1897</span></p>
+    </div>
+    <div class="clearpage"></div>
+    <div class="align-None center container verso white-space-pre-line">
+      <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">La presente opera</em><br />
+      <em class="italics white-space-pre-line">è messa sotto la tutela</em><br />
+      <em class="italics white-space-pre-line">delle vigenti leggi e trattati</em><br />
+      <em class="italics white-space-pre-line">di proprietà</em><br />
+      <em class="italics white-space-pre-line">letteraria ed artistica.</em></p>
+    </div>
+    <div class="clearpage"></div>
+    <div class="align-center auto-scaled figure" style="width: 45%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_010.jpg" /></div>
+    <div class="clearpage"></div>
+    <div class="align-center auto-scaled figure" style="width: 38%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_011.jpg" /></div>
+    <div class="align-None center container x-large">
+      <p class="pfirst"><span class="invisible pageno target" id="page-11" title="11"></span><strong class="bold">INDICE</strong></p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="pfirst"><a class="reference internal" href="#id1">Donna Paola.</a></p>
+      <p class="pnext"><a class="reference internal" href="#molti-anni-dopo">Molti anni dopo.</a></p>
+      <p class="pnext"><a class="reference internal" href="#il-mio-segreto">Il mio segreto.</a></p>
+    </div>
+    <div class="center transition">
+      <p class="pfirst">――――</p>
+    </div>
+    <p class="pfirst"><span class="invisible pageno target" id="page-12" title="12"></span> <span class="invisible pageno target" id="page-13" title="13"></span></p>
+    <div class="level-2 section" id="id2">
+      <span id="id1"></span>
+      <h2 class="center level-2 pfirst section-title title">Donna Paola.</h2>
+      <div class="align-center auto-scaled figure" style="width: 38%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_014.jpg" /></div>
+      <div class="clearpage"></div>
+      <p class="pfirst"><span class="invisible pageno target" id="page-14" title="14"></span> <span class="invisible pageno target" id="page-15" title="15"></span></p>
+      <div class="align-center auto-scaled figure" style="width: 64%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_015.jpg" /></div>
+      <div class="level-3 section" id="i">
+        <h3 class="center level-3 pfirst section-title title">I.</h3>
+        <p class="pfirst">Fulvio s'inchinò, prese dalla mano di Paola il gelato che ella, sorridendo dolcissimamente, gli porgeva, e le disse, guardandola negli occhi:</p>
+        <p class="pnext">— Vi amo.</p>
+        <p class="pnext">— Non dovete amarmi — mormorò lei senza scomporsi, seguitando a sorridere.</p>
+        <p class="pnext">— E perchè?</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-16" title="16"></span>— Perchè ho marito — ribattè ella, ma placidamente.</p>
+        <p class="pnext">E gli occhi di Fulvio, di un tetro azzurro, lampeggiarono di passione. Ella restava innanzi a lui, senza mostrare alcun turbamento, sorridendo ancora, tutta rossa, con le belle braccia bianche e prosciolte sotto il merletto nero delle maniche. Sul merletto nero e sulle bianche braccia scintillavano i braccialetti gemmati: erano ricaduti sui polsi, ella si occupò a risollevarli verso il gomito, con molta cura, giocherellando con le catenine d'oro, coi cerchiolini sottilissimi. Irritato, Fulvio batteva col cucchiaino sul piattello del gelato:</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-17" title="17"></span>— Andatevene — mormorò a un tratto, soffocando di collera — siete una donna odiosa, io vi detesto.</p>
+        <p class="pnext">Paola crollò lievemente il capo, come si fa per un malato incurabile, e si allontanò da Fulvio. La brigata si aggruppava attorno al pianoforte, dove un maestro giovane, pallido, con un grosso ciuffo di capelli neri sulla fronte, accompagnava il canto di una fanciulla gracile, biancovestita, con un filo di voce simpatica, che cantava una romanza di Bizet. La romanza era di carattere orientale, una nenia bizzarra, a volte piena di strilli allegri, a volte piena di lunghi singulti: e due o <span class="invisible pageno target" id="page-18" title="18"></span>tre signore s'illanguidivano, lasciavano liquefare il gelato nel piattello, prese dal delicato lamento della fanciulla orientale: il marito di Paola si dondolava in una poltrona, fumando, tranquillo, guardando con occhio distratto la svelta figura di sua moglie, tutta vestita di nero, tutta scintillante di perline nere. La freschissima brezza marina entrava dalle quattro finestre di quel lungo salone: appoggiato alla finestra, Fulvio guardava il mare, come assorbito. Ora Paola offriva le sigarette ai giovinotti e alle signore che osavano fumare. E la mano che porgeva il porta-sigarette era così <span class="invisible pageno target" id="page-19" title="19"></span>bianca, così pura di linee, che Fulvio sentì distruggersi di tenerezza.</p>
+        <p class="pnext">— Perdonatemi — fece lui levandole in faccia gli occhi supplichevoli.</p>
+        <p class="pnext">— Amico, non ho nulla da perdonarvi — disse Paola, soavemente.</p>
+        <p class="pnext">— Sono un brutale: voi siete buona.</p>
+        <p class="pnext">— No, no — e fece per ritirarsi.</p>
+        <p class="pnext">— Non restate mai un momento accanto a me — mormorò lui con voce di pianto.</p>
+        <p class="pnext">— Non posso, amico; questi signori hanno bisogno di fumare. Ecco là mio marito senza sigarette.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-20" title="20"></span>S'involò, leggiadra, offrì le sigarette a suo marito, sorridendogli. Il marito la guardava quietamente, con un'aria soddisfatta di uomo dalla felicità imperturbabile e sceglieva la sigaretta, a lungo scherzando con le dita della moglie. Pareva che si dicessero tante cose, marito e moglie, tante cose d'amore: ed erano così giovani, così belli, così ben accoppiati, che i loro amici li consideravano con compiacenza, come si guardano due fidanzati. Tutto solo appoggiato alla finestra, Fulvio fissava la scena e impallidiva: fece due o tre passi avanti. Ma, ecco, ella veniva di nuovo a lui, snella, leggiera.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-21" title="21"></span>— La sigaretta è spenta, volete del fuoco?</p>
+        <p class="pnext">— Non temete voi — fece lui, a denti stretti, ma col più amabile fra i sorrisi — non temete voi che io uccida vostro marito?</p>
+        <p class="pnext">— La spagnoletta è spenta... guardate...</p>
+        <p class="pnext">— Vedrete che lo uccido, signora.</p>
+        <p class="pnext">Senza più dirgli nulla, fattasi un po' seria nella faccia, Paola si allontanò da lui, a rilento, come se l'avesse colpita una parola dolorosa. Ora tutti complimentavano la signorina Sofia che aveva cantato così bene <em class="italics">les adieux de l'hôtesse arabe</em>: e la gracile fanciulla, tutta malinconica, sorrideva mestamente.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-22" title="22"></span>— Vi piace Bizet? — chiese Sofia a Fulvio, che si era accostato al resto della brigata.</p>
+        <p class="pnext">— Bizet? — fece lui come trasognato.</p>
+        <p class="pnext">— Sì: vi domandavo se vi piace.</p>
+        <p class="pnext">— Assai — mormorò lui distratto.</p>
+        <p class="pnext">La fanciulla gracile e mesta lo guardò e ripetette, come fra sè, le prime parole della romanza francese:</p>
+        <p class="pnext">— <em class="italics">Puisque rien ne t'arrête...</em></p>
+        <p class="pnext">Ma egli non udì, concentrato nei suoi pensieri.</p>
+        <p class="pnext">— <em class="italics">... adieu bel étranger</em> — finì Sofia pianissimamente.</p>
+        <p class="pnext">Attorno al pianoforte, ora si rideva. Il maestro giovanetto, pallido, col grosso <span class="invisible pageno target" id="page-23" title="23"></span>ciuffo di capelli neri sulla fronte, arrivato da poco da Londra, raccontava a quei suoi amici napoletani l'ostinazione delle <em class="italics">misses</em> e delle <em class="italics">mistresses</em> inglesi a voler imparare le patetiche romanze italiane; ne rifaceva le smorfie e le contorsioni, vivacemente, col brio del napoletano che si vendica della lunga stagione di nebbia sopportata a malincuore. Tutti ridevano, specialmente il marito di Paola: Paola, ritta in piedi, si sventolava col grande ventaglio di raso nero, dove un pittore fantastico aveva dipinto un paesaggio lunare. E Fulvio, non potendo parlare, guardava Paola: la guardava con <span class="invisible pageno target" id="page-24" title="24"></span>tanta intensità, con una fissità così ardente, che a lei le palpebre batterono, due o tre volte, quasi per fastidio. Ma lui non si scosse, avvinto, ipnotizzato, bevendo dagli occhi di lei che non lo guardavano, il fascino invincibile: ed ella, naturalmente, come se la luce soverchia la infastidisse, levò l'ampio ventaglio di raso nero e si nascose il volto. Ora Fulvio non vedeva che il busto scintillante di perline nere e la mano sottile levata, premente le stecche nere del ventaglio: una vela di raso nero gli celava la faccia di Paola: tutti ridevano per le caricature del maestro di musica. Fulvio <span class="invisible pageno target" id="page-25" title="25"></span>aveva gli occhi pieni di lacrime. Sofia lo guardava, con un lievissimo, malinconico sorriso.</p>
+        <p class="pnext">Ma un delicato suono di mandolino entrò dalle finestre che davano sul mare: le risa tacquero, tutti tesero gli orecchi. Il suono si avvicinava: e la brigata, come attratta, si affollò alla porta che dava sul terrazzo. Nero era il mare, nella notte nera: altissime, tremolavano le stelle sul cielo nero. Attraverso l'oscurità del mare una barchetta passava, portando a prora una fiaccola sanguigna che si rifletteva nell'acqua e vi metteva una vampa; sulla barchetta qualcuno suonava <span class="invisible pageno target" id="page-26" title="26"></span>il mandolino, ma non si distingueva chi fosse; qualche cosa biancheggiava, come il vestito d'una donna. E la facella sanguigna rifletteva la sua luce sul mare, e il mandolino invisibile si lamentava, e l'ombra bianca era immobile, e la barchetta filava; un silenzio aveva colto la lieta brigata.</p>
+        <p class="pnext">— È una romanza in azione — disse il maestro di musica rompendo il silenzio.</p>
+        <p class="pnext">— Duetto d'amore — strillò un giovanotto.</p>
+        <p class="pnext">— Non li disturbiamo — disse soavemente Paola.</p>
+        <p class="pnext">— Ehi, della barca! — urlò il marito di Paola, come per contraddire sua moglie — buonasera, <span class="invisible pageno target" id="page-27" title="27"></span>buonasera, divertitevi!</p>
+        <p class="pnext">Tutta la brigata ripetette:</p>
+        <p class="pnext">— Buonasera, buonasera, divertitevi!</p>
+        <p class="pnext">Subito, immergendosi nell'acqua marina, la fiaccola sanguigna si spense, il mandolino tacque, la barchetta vogò nella tenebra e nel silenzio.</p>
+        <p class="pnext">— Troppa superbia, o innamorati! — strillò il marito di Paola.</p>
+        <p class="pnext">— Beati loro! — disse Fulvio.</p>
+        <p class="pnext">— Perchè li invidii? — chiese il maestro di musica. — Napoli ha le sue spiaggie piene di barchette e le sue case piene di vestiti bianchi.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-28" title="28"></span>— Nè vi è scarsezza di mandolini — aggiunse il marito di Paola.</p>
+        <p class="pnext">— Che m'importa della barchetta e della musica e del vestito bianco! quelli si amano: io li invidio.</p>
+        <p class="pnext">— Oh il sentimentale, il sentimentale! — esclamarono due o tre.</p>
+        <p class="pnext">— L'amore è una bellissima cosa — disse Fulvio, con una convinzione profonda.</p>
+        <p class="pnext">— Che scoperta, perdio! — gridò il marito di Paola.</p>
+        <p class="pnext">— Bisogna ammogliarsi — disse il maestro di musica. — Fulvio, guardò la signora Paola e suo marito: bisogna ammogliarsi.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-29" title="29"></span>— Bisogna ammogliarsi — ripetette soavemente Paola.</p>
+        <p class="pnext">— Bisogna morire — mormorò Fulvio.</p>
+        <p class="pnext">Ma gli amici e le amiche rientravano nel salone: si combinava per la sera seguente, una gita per mare, con due barchette, con musica. Non era meglio aspettare che venisse la luna? Ma no, le gite con la luna sono volgari, non si ha paura di nulla, ci si vede troppo chiaro: è meglio andare nella notte, come la barchetta degli amanti. Questo dicevano le signore; i signori proponevano di portare la cena. Sulla soglia della porta, verso il terrazzo, Paola disse a Fulvio, da lontano:</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-30" title="30"></span>— Siete anche voi della gita?</p>
+        <p class="pnext">— No, no, sentite... — disse lui con voce soffocata.</p>
+        <p class="pnext">Ma ella non uscì sul terrazzo. Qualche signora parlava di andar via: ma per trattenere gli invitati ancora un poco, Sofia si mise a cantare il <em class="italics">valtzer</em> dell'<em class="italics">Ombra</em> nella <em class="italics">Dinorah</em>. La gente, in piedi, ascoltava; ma la breve voce simpatica della fanciulla non arrivava a eseguire quei trilli complicati, quelle risposte dell'eco. Sibbene ella cantava quel <em class="italics">valtzer</em> come se piangesse, e invero quella musica, che è il pianto di una illusione, pareva un singulto di dolcissima follia.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-31" title="31"></span>— Datemi il mio ventaglio — disse Paola dolcemente a Fulvio, che se ne stava solo solo sul terrazzo.</p>
+        <p class="pnext">— No, se non mi sentite — disse lui, tenendosi il ventaglio stretto alle labbra.</p>
+        <p class="pnext">— Datemi il mio ventaglio — ripetette ella con fermezza e con dolcezza.</p>
+        <p class="pnext">— Sentitemi, sentitemi, ve ne scongiuro, è una cosa gravissima...</p>
+        <p class="pnext">Paola non gli diede più retta, rientrò nel salone; ora il cameriere portava attorno dei bicchieri pieni di malaga dove un pezzo di ghiaccio galleggiava, ed ella girava premurosa, sorridente, serena. <span class="invisible pageno target" id="page-32" title="32"></span>Quando ebbe compiuto il suo giro, naturalmente si rammentò dell'altro suo ospite che stava solo, nell'ombra, sul terrazzo, fra la nerezza del cielo e quella del mare.</p>
+        <p class="pnext">— Datemi il ventaglio, amico.</p>
+        <p class="pnext">— Sentitemi... — disse lui, ancora.</p>
+        <p class="pnext">E la voce era così piena di dolore, che ella si arrestò.</p>
+        <p class="pnext">Nella sala, adesso, con la nova allegria del vino, cantavano un coro napoletano. Ella ascoltava le parole di Fulvio.</p>
+        <p class="pnext">— Sentite. Io debbo parlarvi. Debbo dirvi delle cose gravissime. Non m'interrompete, <span class="invisible pageno target" id="page-33" title="33"></span>Paola, ve ne prego. Ascoltate: ho da dirvi, da dirvi tante cose. Ma le dico presto, non dubitate. Ora non posso dirle. Vi è gente di là, gente felice; io sono infelicissimo, Paola, se voi non ascoltate quello che ho a dirvi. Siate paziente, ve ne prego. Io soffro assai. Voi non soffrite, lo so; ma siete assai compassionevole. Ho da parlarvi, dunque. Dobbiamo esser soli. Sentite. Io non lascio questo terrazzo. Chiudete la porta, crederanno che io sia andato via. Ve ne prego, chiudetela. Vostro marito andrà a letto..... e io voglio parlarvi. Aspetterò qui fuori, quanto vorrete. Quando egli dorme, venite.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-34" title="34"></span>— Non verrò — disse lei, soavemente.</p>
+        <p class="pnext">— Sentite, Paola, io sono come in punto di morte. Di là cantano e ridono; qui vi è un agonizzante.</p>
+        <p class="pnext">— Io non verrò — ripetette lei, senza turbarsi.</p>
+        <p class="pnext">— Sentite ancora. Ve ne scongiuro, in nome della vostra coscienza di donna onesta, per la vostra virtù di fanciulla e di sposa, per la vostra dolcezza e per la vostra pietà, non mi negate quest'ultimo favore.....</p>
+        <p class="pnext">— Non verrò.</p>
+        <p class="pnext">— Se non venite, io mi ammazzo, Paola.</p>
+        <p class="pnext">Ella lo guardò un minuto secondo.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-35" title="35"></span>— Io mi ammazzo, Paola, se non venite. Siete una cristiana. Non lascerete morire un uomo così.</p>
+        <p class="pnext">— Verrò — disse lei.</p>
+      </div>
+      <div class="level-3 section" id="ii">
+        <h3 class="center level-3 pfirst section-title title"><span class="invisible pageno target" id="page-36" title="36"></span>II.</h3>
+        <p class="pfirst">E venne. La notte era alta, oramai, sul golfo napoletano e lontanissime, scintillavano le tremolanti stelle; sulla deserta strada di Posillipo, che sovrastava alla terrazza della villa, una fila di lumi correva sino a Napoli; alta la solitudine, alto il silenzio. Le imposte del balcone che davano sul terrazzo si schiusero pianissimamente e un'ombra bianca, lieve lieve, scivolò sino a Fulvio che aspettava da tre ore.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-37" title="37"></span>— Grazie — disse lui, cercando di vedere il volto di Paola all'oscuro.</p>
+        <p class="pnext">— Noi siamo in fiero pericolo di morte — rispose lei con molta dolcezza.</p>
+        <p class="pnext">— Lo so — e chinò il capo.</p>
+        <p class="pnext">Egli non parlava. Invece, nel momento che aveva strappato a Paola la fatale promessa, la sua passione era in uno stato di esaltamento. Nella prima ora di aspettativa egli non aveva fatto altro che ripetere a sè stesso, affannosamente, turbinosamente, quello che voleva dire a Paola; e certe parole, certe frasi, mormorate sottovoce a sè stesso, lo avevano affogato <span class="invisible pageno target" id="page-38" title="38"></span>di emozione. Ella non veniva ancora. Sentiva che andavano e venivano, per casa, i servi, riordinando le stanze, chiudendo le finestre; sentiva le voci tranquille di Paola e di suo marito, che discorrevano; ma non poteva udire le parole. Poi tutto fu chiuso, si spensero i lumi, un grande silenzio regnò. Egli cominciò a tremare d'impazienza, non osando muoversi, raggricchiato al suo posto, coi nervi che vibravano, ripetendo confusamente, a brani, quello che voleva dire a Paola, come un bimbo disperato cerca invano di raccapezzarsi nella lezione imparata a mente. Paola non veniva. Egli aveva contato <span class="invisible pageno target" id="page-39" title="39"></span>cento volte i lampioni a gas sulla via di Posillipo; erano trentatre, gli altri si perdevano in una fila di luce. Per ingannare il tempo pensò di contare le stelle; ma ci si perdette. Quante ore erano passate? Quella notte era dunque eterna? E una disperazione rassegnata lo colse, lo abbattè; forse Paola non sarebbe mai venuta. A lui non restava che buttarsi di sotto, nel mare; giammai si sarebbe fatto cogliere dal giorno, dal sole, su quella terrazza. E tale idea, tale soluzione lo quietò. Un accasciamento profondo lo cinse e non seppe più nulla del tempo e del luogo. Tanto che lo schiudersi del balcone <span class="invisible pageno target" id="page-40" title="40"></span>e l'ombra di Paola lo fecero appena trasalire. Ora, non trovava più nulla da dirle. Tutto era finito, egli poteva buttarsi di sotto, nel mare nero.</p>
+        <p class="pnext">— Che avete a dirmi, amico?</p>
+        <p class="pnext">— Che vi amo.</p>
+        <p class="pnext">— Me lo avete già detto. Null'altro? — e fece atto per andarsene.</p>
+        <p class="pnext">— Vi amo, vi amo, vi amo.</p>
+        <p class="pnext">— Amico, mio marito è di là che dorme. Se una zanzara gli fa udire la sua canzoncina, se un mobile scricchiola, se la vostra voce o la mia si levano un poco, egli si sveglia. Egli verrà qui e noi moriremo.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-41" title="41"></span>— Questo cerco — mormorò con voce cupa.</p>
+        <p class="pnext">— Morirei per voi, se vi amassi. Ma non vi amo.</p>
+        <p class="pnext">— E perchè vi esponete alla morte?</p>
+        <p class="pnext">— Per pietà.</p>
+        <p class="pnext">— Non sentite altro, per me?</p>
+        <p class="pnext">— Amicizia e pietà.</p>
+        <p class="pnext">— Voi altre donne siete infami.</p>
+        <p class="pnext">— Povero Fulvio! — fece ella con dolcezza.</p>
+        <p class="pnext">— Vi proibisco di compatirmi. Dovete amarmi, capite? Questo sono venuto a dirvi.</p>
+        <p class="pnext">— Non posso amarvi.</p>
+        <p class="pnext">— Dovete. Ho il diritto di essere amato! Ah voi credete che sia nulla la esistenza <span class="invisible pageno target" id="page-42" title="42"></span>di un uomo? Credete che sia nulla passare accanto a un uomo e togliergli tutto? Credete che sia nulla farlo agghiacciare di freddo e farlo avvampare, dandogli una febbre che mai non si placa? Credete voi che una donna possa impunemente guardare con dolcezza, sorridere con dolcezza, parlare con dolcezza, come voi guardate, sorridete, parlate? O maledetta dolcezza, maledetta dolcezza!</p>
+        <p class="pnext">Malgrado che le fosse molto vicino e quasi intuisse l'espressione del volto di Paola, egli non vide le lagrime che salivano agli occhi.</p>
+        <div class="align-center auto-scaled figure" style="width: 33%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_043.jpg" /></div>
+        <p class="pfirst">— Perchè, infine, io ero una creatura felice. Io godevo <span class="invisible pageno target" id="page-45" title="45"></span>la giovinezza e il sole e la lietezza del mio paese e la giocondità dei miei amici! Io avevo la serena indifferenza, la più grande felicità umana, io ero egoista, ma tranquillo; io mi lasciavo amare, e non cercavo che mi amassero. Sereno, sereno come Giove!</p>
+        <p class="pnext">— Dio vi possa ridare la serenità — sussurrò lei, con dolcezza.</p>
+        <p class="pnext">— Dio... io non lo prego!</p>
+        <p class="pnext">— Lo prego io, sempre, perchè vi dia la pace.</p>
+        <p class="pnext">— O femmina ipocrita! non vi burlate anche del Signore, come vi burlate di me. Sentite. Voi dovete amarmi, per forza. Vi amo troppo, per non essere amato. Sarebbe <span class="invisible pageno target" id="page-46" title="46"></span>una enorme ingiustizia. Non vi sono queste ingiustizie, nel mondo. Il mondo è equilibrato, tutto si pareggia. La mia fiamma è troppo viva, perchè non v'infiammi. Dovete amarmi. Lascerete vostro marito, vostra madre, la vostra casa, i vostri servi, tutto quello che avete amato, tutto quello che avete adorato: e verrete con me. Andremo lontano. Saremo assai felici, assai felici, vedrete. Saremo anche infelici, lo so; ma non importa, così è la vita. La passione è più forte di noi. Io vi adoro, Paola, andiamo via!</p>
+        <p class="pnext">— Voi siete pazzo, amico — disse lei, appoggiando il <span class="invisible pageno target" id="page-47" title="47"></span>gomito sul parapetto e guardando il mare, sotto.</p>
+        <p class="pnext">— No, o se vi piace, sono pazzo. Questo non importa. Sta che non posso vivere senza voi. Sta che ho bisogno di voi. Sta che vi voglio. Nessuno vi vuole come me; ora nulla resiste al magnetismo della volontà, essa liquefarebbe il diamante e spezzerebbe il ferro. Siete una donna, avete viscere umane, sentite, amate, odiate, sentirete il magnetismo dell'anima mia che vi vuole. Vostro marito vi ha, ma non vi vuole; è una bestia. Io l'odio ferocemente. Volevo ucciderlo stasera; lo ucciderò domani, se non venite via con me. Ma voi verrete. <span class="invisible pageno target" id="page-48" title="48"></span>Siete venuta sul terrazzo, verrete via con me. Andiamo.</p>
+        <p class="pnext">E le prese la mano, risolutamente, per portarla via.</p>
+        <p class="pnext">— No — disse lei.</p>
+        <p class="pnext">— Venite via.</p>
+        <p class="pnext">— No.</p>
+        <p class="pnext">— Perchè?</p>
+        <p class="pnext">— Perchè non vi amo.</p>
+        <p class="pnext">— O Paola, o Paola, non parlate così — proruppe Fulvio, con voce di pianto.</p>
+        <p class="pnext">— Come volete che io parli?</p>
+        <p class="pnext">— Tacete piuttosto. Il suono della vostra voce, così dolce e così fredda mi fa disperare. Tacete ve ne prego.</p>
+        <p class="pnext">Ella tacque. Fulvio si era buttato con le braccia e col capo sul parapetto, soffocando <span class="invisible pageno target" id="page-49" title="49"></span>i singhiozzi. Ella aveva chinato la testa sul petto, come se pensasse profondamente. Una carrozza passò sulla via di Posillipo, al trotto, un suono di risa squillanti arrivò. Paola levò il capo.</p>
+        <p class="pnext">— Non piangete, Fulvio.</p>
+        <p class="pnext">— Non piango — disse lui, disperatamente.</p>
+        <p class="pnext">— Siate forte.</p>
+        <p class="pnext">— Sono assai forte.</p>
+        <p class="pnext">— Sentite, sentite quello che vi dice l'amica. Voi guarirete facilmente.</p>
+        <p class="pnext">— No, mai.</p>
+        <p class="pnext">— Guarirete. Siete onesto, voi?</p>
+        <p class="pnext">— Sono onesto.</p>
+        <p class="pnext">— Ebbene, guarirete. La passione è una cosa disonesta. <span class="invisible pageno target" id="page-50" title="50"></span>Io ho marito, vedete. Questa sembra una risposta volgare; è onesta, invece. Quando siamo giovanette, la madre ci dice; l'uomo che sposate dovete amarlo. Se non potete amarlo dovete almeno rispettarlo, dovete essergli fedeli e obbedienti, conservargli il vostro corpo e la vostra anima, anche a costo di morire di dolore. E queste parole non solo le dice la madre, ma ce ne dà l'esempio quotidiano. Questo dovere di onestà, questa tradizione di fedeltà, questa eredità di virtù, ci si trasmette nel sangue di madre in figlia. Non vi è nulla di sublime, vedete; è un dovere, si compie.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-51" title="51"></span>— E si muore, Paola.</p>
+        <p class="pnext">— Non si muore. La passione, cieca, insulta il marito, il buon marito che dorme di là, calmo, fidente, senza un sospetto. Questa è la grande ingiustizia. Perchè, infine, l'uomo che si sposa, anche quando fa un matrimonio di interesse o di ambizione, fa un sacrificio grave. Egli ci affida il suo nome e il suo cuore; egli ci dà la sua fede e la sua libertà; egli si lega a un vincolo indissolubile; egli si mette a lavorare per noi e per i nostri figli, umilmente e gloriosamente. Noi siamo la sua consolazione e la sua gloria; noi rappresentiamo per lui le più dolci e più sicure soddisfazioni: <span class="invisible pageno target" id="page-52" title="52"></span>la sua giornata passa nel desiderio di ritrovarci, di vederci; le sue ore più care sono nella casa, nelle nostre braccia. O che tesoro di piccoli e grandi sacrifici è l'amore di un marito! Voi li ignorate. La passione ignora tutto; non conosce neppure sè stessa.</p>
+        <p class="pnext">— I mariti tradiscono le mogli — mormorò lui, come trasognato.</p>
+        <p class="pnext">— Le tradiscono, ma le amano. Nulla vale a vincere quel legame profondo, intimo, fatto di parole e fatto di lacrime, fatto di baci e fatto di sospiri; nulla vale a spezzare questo vincolo penetrato nel cuore e nei sensi. Ma, <span class="invisible pageno target" id="page-53" title="53"></span>ecco la passione; vuol vincere il sacro legame, vuole spezzare il sacro vincolo. Chi siete voi? Un giovanotto, un uomo, un essere qualunque, della infinita umanità; lontano da me, estraneo a me. Passate per la mia strada: io, forse, passo per la vostra. E subito mi amate. Che avete fatto per me? Nulla. Che potete fare? Nulla. Cioè molto. Ho un nome, volete togliermelo; ho un onore, voi volete che lo butti via, come un cencio; ho la stima degli amici, debbo disdegnarla; ho la fede del mio sposo, debbo tradirla; ho la pace della mia coscienza, debbo perderla, per sempre. Perchè? Perchè voi <span class="invisible pageno target" id="page-54" title="54"></span>mi amate? Anche colui che dorme di là, così tranquillo, mi ama.</p>
+        <p class="pnext">— Non è vero!</p>
+        <p class="pnext">— Che ne sapete voi? Noi sole donne conosciamo chi ci ama. Parlate di diritti, voi? O povero uomo che dormi, va, adora una donna sino a sposarla; dà a costei la miglior parte della tua vita, riponi in costei tutta la tua speranza, siile fratello, padre, marito, amante, amico, consigliere, infermiere; soffri per lei, nel corpo e nell'anima! Ecco che un estraneo, un bell'egoista avvampante di capriccio, un uomo che non ha fatto nulla, che offre alla tua donna una vita di disonore, <span class="invisible pageno target" id="page-55" title="55"></span>ecco che costui, per forza di violenza, vuol toglierti tutto! Parlate d'ingiustizia voi? Che fate qua? Perchè mi degno di ascoltarvi, di difendervi, di darvi delle spiegazioni? Non so chi siate, non vi conosco. Levatevi dalla mia strada. Andatevene.</p>
+        <p class="pnext">— Voi non mi amate, Paola, ecco tutto.</p>
+        <p class="pnext">— Questa è la verità, non vi amo.</p>
+        <p class="pnext">Ma una fuggevolissima luce, venuta dalla stanza del marito li colpì entrambi. Un lampo brevissimo; poi l'ombra di nuovo. Fulvio e Paola si guardarono, s'intesero. E quietamente, dolcemente, come se fosse sul punto di morire, ella disse:</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-56" title="56"></span>— Madonna benedetta, vi raccomando l'anima mia.</p>
+        <p class="pnext">Sottovoce, orò. Fulvio taceva, aspettando. Ma nessun rumore si fece udire, nessuna luce comparve, nessuno venne. Era stato un inganno. Restarono così, per del tempo. Egli non osava interrompere quel silenzio, non osava dire l'ultima parola. Tutto gli sembrava crollato, intorno, nella notte nera; e non poteva camminare fra le rovine. Pure, levando gli occhi, sentì che gli occhi di lei lo interrogavano desiderosi della fine.</p>
+        <p class="pnext">— Che debbo fare? — egli domandò glacialmente.</p>
+        <p class="pnext">— Andarvene — fece lei, con dolcezza imperturbabile.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-57" title="57"></span>— Andar dove?</p>
+        <p class="pnext">— Dove volete; non qui, insomma.</p>
+        <p class="pnext">— Assai lontano?</p>
+        <p class="pnext">— Assai lontano.</p>
+        <p class="pnext">— Posso ritornare?</p>
+        <p class="pnext">— No.</p>
+        <p class="pnext">— Fra qualche anno?</p>
+        <p class="pnext">— No, mai.</p>
+        <p class="pnext">— Che farete, voi, qui?</p>
+        <p class="pnext">— Passeranno gli anni; poi, morirò.</p>
+        <p class="pnext">— Non vi vedrò mai più, Paola.</p>
+        <p class="pnext">— Mai più.</p>
+        <p class="pnext">— È la morte, questa, per me.</p>
+        <p class="pnext">Ella aprì le braccia, come se nulla avesse ad aggiungere.</p>
+        <p class="pnext">— Addio, dunque.</p>
+        <p class="pnext">— Addio.</p>
+        <p class="pnext"><span class="invisible pageno target" id="page-58" title="58"></span>Non si diedero la mano. Egli voltò le spalle, rientrò nel salone oscuro, camminando come un sonnambulo. Ella tendeva l'orecchio, come a sentirne il passo attraverso la casa; e restava immobile, bianca. Poi lo vide, dalla terrazza, camminare solo, sulla via di Posillipo, perdersi solo nella notte, nell'ombra, come un morto. Allora solo Paola si volse. Una voce alle spalle le aveva detto:</p>
+        <p class="pnext">— Paola tu ami Fulvio.</p>
+        <p class="pnext">Ella rispose al marito:</p>
+        <p class="pnext">— Sì.</p>
+        <p class="pnext">E le due disperazioni si guardarono in faccia.</p>
+      </div>
+    </div>
+    <div class="level-2 section" id="id3">
+      <span id="molti-anni-dopo"></span>
+      <h2 class="center level-2 pfirst section-title title"><span class="invisible pageno target" id="page-59" title="59"></span>Molti anni dopo.</h2>
+      <div class="align-center auto-scaled figure" style="width: 38%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_060.jpg" /></div>
+      <div class="clearpage"></div>
+      <p class="pfirst"><span class="invisible pageno target" id="page-60" title="60"></span> <span class="invisible pageno target" id="page-61" title="61"></span></p>
+      <div class="align-center auto-scaled figure" style="width: 64%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_061.jpg" /></div>
+      <div class="vspace" style="height: 2em"></div>
+      <p class="pfirst">Francesco II aveva dato la costituzione e quindi l'amnistia; gli emigrati napoletani, a cui l'esilio era duplice dolore, ritornavano, dopo dodici anni, in patria, vinti da una irresistibile nostalgia. Il quindici di agosto, giorno dell'Assunzione, era tornato in Napoli un emigrato di Terra di Lavoro, partito studente, nel '48 e da paesi assai <span class="invisible pageno target" id="page-62" title="62"></span>lontani portava seco la moglie giovane, straniera, e una figliuolina di quattro anni. Ora, a Napoli, egli prevedeva rivolgimenti, tumulti e sangue; e pensò a mettere in sicuro la moglie e la bambina. Così le condusse in Terra di Lavoro, a Ventaroli, nella casa paterna, le raccomandò ai suoi parenti e ripartì per Napoli.</p>
+      <p class="pnext">Nè voi troverete Ventaroli sulla carta geografica. Ventaroli è anche meno di un villaggio, è un piccoletto borgo sulla collina, più vicino a Sparanise che a Gaeta. Vi sono duecento cinquantasei anime, tre case di signori, una chiesa tutta bianca e un <span class="invisible pageno target" id="page-63" title="63"></span>cimitero tutto verde: vi erano allora un gobbo idiota, una vecchia pazza e un eremita in una cappelluccia, nella campagna: il nome del paese era inciso grossolanamente sopra una pietra: i protettori sono i SS. Filippo e Giacomo, la cui festa ricorre il primo di maggio; la protettrice è la Madonna della Libera, che sta nella cappelluccia dell'eremita. A Ventaroli ci si alza alle sei del mattino, si mangia a mezzogiorno, si dorme, si passeggia, si cena alle sette e si ridorme alle otto. Alla mattina vi è la messa; alla sera il vespro e il rosario. Verso l'imbrunire è un gran grugnito di maialetti che ritornano <span class="invisible pageno target" id="page-64" title="64"></span>dal pascolo; e un mormorio di voci umane, strilli di donna e pianti di fanciulletti. Il parroco, don Ottaviano, uomo bruno e segaligno, era propriamente cugino dell'emigrato e capo della prima famiglia del paese.</p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="center large pfirst"><span class="invisible pageno target" id="page-65" title="65"></span><sub class="subscript">*</sub><sup class="superscript">*</sup><sub class="subscript">*</sub></p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="pfirst">Ora, dopo tre giorni, la fortezza di Capua si chiuse e le comunicazioni fra Napoli e la Terra di Lavoro furono interrotte. L'emigrato non seppe più nulla della sua famiglia; e la moglie e la figliuolina restarono nel villaggio, straniere, parlanti male l'italiano, tra parenti non malevoli, ma rustici. A Ventaroli arrivarono notizie vaghe, paurose: si avanzavano i Garibaldini, si avanzavano i Piemontesi, ma le truppe borboniche <span class="invisible pageno target" id="page-66" title="66"></span>tenevano tutta la campagna. Il parroco, che era anche consigliere comunale, cominciò ad intimidirsi: la moglie dell'emigrato, sua cognata, la dama straniera, Cariclea, dovette dargli coraggio, ogni sera nelle conversazioni dopo cena; ma ogni mattina ricominciavano i terrori di don Ottaviano. Nè aveva torto: verso i venti di settembre s'intese nella valle un gran rumore di trombe, di cavalli, di soldati, e un distaccamento di Svizzeri venne ad accamparsi in Ventaroli. Nel cortile dell'unico palazzo, quello di don Ottaviano accamparono duecento fra soldati e ufficiali.</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-67" title="67"></span>Furono ospiti terribili. Gli ufficiali svizzeri erano buoni e cortesi, assuefatti oramai alla dolcezza della vita napoletana, avendo lasciato a Napoli casa, famiglia, figliuoli, amici: addolorati di quella guerra che sentivano inutile, addolorati per quella causa che sentivano perduta: ma i soldati non tolleravano più freno di disciplina, erano diventati ribelli a ogni ordine, si abbandonavano alla ubbriachezza, al gioco. Dopo tre giorni avean consumato tutto il vino, tutto l'olio, tutta la farina di don Ottaviano: e chiedevano ancora, insolentemente, bastonando i contadini, sgozzando le galline. <span class="invisible pageno target" id="page-68" title="68"></span>Le vecchie zie, le donne antiche di casa, stavano chiuse nello stanzone di famiglia; tacevano, non osando neppure filare, pregando mentalmente. Le serve erano in cucina, intorno a certi caldaioni dove cuocevano i maccheroni che non bastavano mai. Tutta la notte era un cantare, un urlare, un litigare: don Ottaviano, chiuso nella stanzetta, leggeva ad alta voce i salmi penitenziali, per quietarsi o per stordirsi, ma non poteva dormire, il poveretto. Ma la più forte, sebbene la più minacciata, era la signora Cariclea, la moglie dell'emigrato. Lo sapevano bene, i soldati, che era la moglie di un cospiratore, <span class="invisible pageno target" id="page-69" title="69"></span>di un nemico, di uno che aveva tolta Napoli a Francesco II: e ogni volta che ella compariva sulla terrazza o attraversava il cortile, vi era un mormorio crescente di ostilità. Ella passava, quieta, serena, come se niente fosse, e pareva non udisse che la chiamavano <em class="italics">moglie di brigante</em>, <em class="italics">moglie di assassino</em>. Se ne lagnava, ella, con qualche ufficiale, specialmente con un maggiore, alto, biondo, robusto, un colosso.</p>
+      <p class="pnext">— Signora mia — le diceva costui in inglese — io non so che farvi. Badate alla vostra vita, io non posso garantirvela. Non garantisco neppure la mia.</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-70" title="70"></span>Ella non temeva per sè, temeva per la sua creaturina. La bimba aveva un cappellino rotondo, chiamato allora alla <em class="italics">Garibaldi</em>, con un <em class="italics">pompon</em> tricolore: e la bimba voleva portarlo sempre, quel pericoloso cappellino. Quando i soldati la vedevano passare, tutta fiera di quel pomo di seta tricolore, era come una rivolta:</p>
+      <p class="pnext">— Tagliamo loro la testa, a questa razza di briganti, tagliamo la testa di questa creatura, così imparerà a portare il pomo tricolore!</p>
+      <p class="pnext">La madre tirava un poco a sè la bambina e fingeva di sorridere, e quando era sola, in camera sua, soltanto allora, <span class="invisible pageno target" id="page-71" title="71"></span>abbracciava la bimba, con una stretta frenetica. Don Ottaviano urlava:</p>
+      <p class="pnext">— Ci farete ammazzare tutti, con quel vostro pomo tricolore!</p>
+      <p class="pnext">Ma la bimba non voleva lasciarlo, gridava, gridava, glielo aveva dato il suo papà, quel cappellino col pomo tricolore. Infine, i viveri cominciando a mancare, i soldati diventarono più rabbiosi e chiesero quattrini: il maggiore portò la imbasciata a don Ottaviano. Costui un giorno dette ai soldati trenta ducati messi da parte per le feste di Natale: ma di notte, aiutato dalla cognata donna Cariclea, dalla zia Rachele <span class="invisible pageno target" id="page-72" title="72"></span>e dalla serva Ottavia, seppellì in un angolo dell'orto, il <em class="italics">tesoro della Madonna</em>, collane di oro, anelli, orecchini, <em class="italics">ex-voto</em> di argento, pissidi, calici, candelabri, altri arredi sacri. L'altare famigliare, che era nel grande salone di famiglia, dedicato alla Vergine, restò spoglio di ogni ornamento. Il seppellimento fu fatto misteriosamente:</p>
+      <p class="pnext">— Benedetto, benedetto! — diceva don Ottaviano, baciando piamente ogni arnese sacro, prima di sotterrarlo.</p>
+      <p class="pnext">E singhiozzava, il povero prete.</p>
+      <p class="pnext">Poi dette ai soldati altri venti ducati, che erano una dote da estrarsi, il primo di <span class="invisible pageno target" id="page-73" title="73"></span>novembre, per far maritare una zitella del paese: ma non bastarono. Donna Cariclea dette loro venti marenghi che il marito le aveva lasciati; ma non bastarono. Zia Rachele dette a questi svizzeri furiosi quindici ducati di economie fatte, in molti anni, <em class="italics">a grano a grano</em>; ma non bastarono. Ottavia, la serva, aveva diciotto <em class="italics">carlini</em>: li dette. In breve, nel palazzo non ci fu più un soldo, nè un pizzico di farina, nè una goccia di vino. Gli ufficiali svizzeri si vergognavano: specialmente il maggiore, che era una persona assai gentile, chinava il capo, offeso nel suo orgoglio di <span class="invisible pageno target" id="page-74" title="74"></span>militare. Ora i soldati volevano il <em class="italics">tesoro della Madonna</em>: lo volevano giuocare a carte.</p>
+      <p class="pnext">— La Madonna non ha tesoro — diceva don Ottaviano: — ditelo voi, donna Cariclea.</p>
+      <p class="pnext">— La Madonna non ha tesoro — ripeteva la coraggiosa signora.</p>
+      <p class="pnext">Il maggiore andava e veniva, parlamentando fra i soldati e la famiglia.</p>
+      <p class="pnext">— Se non ci danno il tesoro ammazziamo la bimba — mandavano a dire i soldati.</p>
+      <p class="pnext">— Raccomandiamoci alla Vergine, cognata mia — mormorava il prete.</p>
+      <p class="pnext">Così, prevedendo imminente la morte, tutta la famiglia <span class="invisible pageno target" id="page-75" title="75"></span>si raccolse nello stanzone, innanzi all'altare denudato, e si mise a pregare. Don Ottaviano aveva vestito i paramenti sacri e stava inginocchiato sui gradini dell'altare. Era una settimana, dieci giorni di accampamento: nessuna notizia, nessun soccorso. Ora l'umore degli svizzeri era cambiato. Chiedevano un banchetto: volevano che nel cortile s'imbandisse una grande mensa, volevano i gnocchi, se no, mettevano fuoco alla casa. Il parroco giurava di non aver nulla, nulla da dare, neppure un tozzo di pane, il maggiore con le lacrime agli occhi lo scongiurava, che cercasse, <span class="invisible pageno target" id="page-76" title="76"></span>che mandasse, per pietà della vita di tutte quelle donne, vecchie e giovani. Furono spediti corrieri a Carinoia, a Casale, a Cascano, per trovar farina. Ma intanto i soldati andarono nella legnaia, ne cavaron fuori tutte le fascine e le disposero attorno alle mura del palazzo. I corrieri che erano andati per farina tardarono assai: forse erano stati arrestati, forse erano morti. Un mormorio crescente saliva dal grande cortile. Nel salone le donne dicevano le litanie, salmodiando. L'ora passava lenta.</p>
+      <p class="pnext">— Se fra dieci minuti non arriva il corriere con la farina, i soldati danno fuoco — venne a dire il maggiore.</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-77" title="77"></span>— Non potete fare più nulla per noi? — chiese donna Cariclea.</p>
+      <p class="pnext">— Più nulla, signora.</p>
+      <p class="pnext">— Portar via questa piccolina? Io non mi dolgo di morire; vorrei salvare la bimba.</p>
+      <p class="pnext">— Mi ucciderebbero con lei, signora.</p>
+      <p class="pnext">— Che Dio ci assista, dunque — mormorò donna Cariclea.</p>
+      <p class="pnext">E Dio li assistette. Un corriere da Cascano ritornò. Portava farina: poca, insufficiente, ma ne portava. Così le serve lasciarono di pregare e scesero in cucina, a fare i gnocchi, per i soldati.</p>
+      <p class="pnext">Ma i soldati non vollero <span class="invisible pageno target" id="page-78" title="78"></span>togliere le fascine: e la morte parve solo ritardata di qualche ora; si capiva che dopo il banchetto i soldati sarebbero diventati più feroci; non avrebbero conosciuto più ragione. Essi, nel cortile, tumultuavano; le povere serve, in cucina, manipolavano la pasta, instupidite; su, nello stanzone, il parroco aveva confessato e dato l'assoluzione a tutti i suoi parenti. La piccolina di donna Cariclea spalancava gli occhi, spaventata: ma non piangeva.</p>
+      <p class="pnext">A un tratto il pesante martello del portone risuonò, tre volte sonoramente. Un silenzio profondo. Ma nessuno <span class="invisible pageno target" id="page-79" title="79"></span>aprì. Tre altri colpi: e il battito del piede ferrato di un cavallo risuonò innanzi al portone.</p>
+      <p class="pnext">— Chi va là? — chiese la sentinella, senz'aprire.</p>
+      <p class="pnext">— Viva Francesco II! — gridò una voce affannosa.</p>
+      <p class="pnext">— Viva, viva! — urlarono i soldati.</p>
+      <p class="pnext">Era una staffetta: un soldato pallido e grondante sudore. Chiese del colonnello, del maggiore, di un capo; non aveva che due parole da dirgli. Il maggiore alto e biondo, il colosso affettuoso e fiero accorse; la staffetta si rizzò, gli parlò all'orecchio. Il maggiore restò imperterrito, assentì col capo; la staffetta <span class="invisible pageno target" id="page-80" title="80"></span>ripartì, precipitosamente. Il maggiore salì sul terrazzino interno che dava sul cortile, fece suonare la tromba, due volte.</p>
+      <p class="pnext">— Soldati — disse con voce tonante — abbiamo innanzi a noi Garibaldi, alle spalle arriva Vittorio Emanuele. Facciamo il nostro dovere. Viva Francesco II!</p>
+      <p class="pnext">— Viva! — disse qualche voce.</p>
+      <p class="pnext">E lentamente si misero in tenuta di partire. Andavano fiacchi, lenti, molli, attaccandosi la giberna, visitando i fucili: e il maggior loro dolore, per quei mercenari brutali, era di non poter banchettare, di non poter mangiare <span class="invisible pageno target" id="page-81" title="81"></span>i gnocchi che le povere serve facevano in cucina. Gli ufficiali andavano, venivano, gridavano; ma inutilmente.</p>
+      <p class="pnext">— Consolatevi, signora — disse il maggiore a donna Cariclea, entrando nel salone — ora vengono i Garibaldini.</p>
+      <p class="pnext">Ella non osò consolarsi. Stringeva la piccolina sul petto e non parlava. Il parroco non levava la testa.</p>
+      <p class="pnext">— Addio, Signora, non ci vedremo più — disse il maggiore. — Noi andiamo alla morte.</p>
+      <p class="pnext">E non tremava la sua voce. Uscì, si pose alla testa dei soldati, marziale, bellissimo a cavallo, camminando <span class="invisible pageno target" id="page-82" title="82"></span>serenamente alla battaglia; dietro di lui i soldati svizzeri andavano, come pecore, stretti stretti, taciturni, torvi. Nessuno osò levare la voce, nel palazzo deserto, devastato; per un'ora tutti tacquero, innanzi all'altare, subendo ancora l'incubo di quell'assedio.</p>
+      <p class="pnext">— Ora vengono i Garibaldini — disse, a un tratto, la bambina.</p>
+      <p class="pnext">E vennero. Portavano la camicia rossa, ma erano coperti di polvere, con le scarpe rotte, stanchi, sfiniti; volevano bere, volevano mangiare, non ne potevano più.</p>
+      <p class="pnext">— Che daremo loro? — diceva don Ottaviano, disperandosi.</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-83" title="83"></span>I Garibaldini non credevano che non ci fosse nulla. Erano una quarantina, estenuati; avevano trovato la devastazione dappertutto. Dappertutto i Borbonici avevano mangiato tutto, bevuto tutto, non vi era più nulla; come potevano dunque battersi? Un ufficiale, buonissimo, parlamentava con donna Cariclea e col parroco; era inutile, non vi era nulla, nulla. Ma un clamore venne dal cortile; i Garibaldini avevano scoperto la cucina e il caldaione dei gnocchi.</p>
+      <p class="pnext">— Ah, Borbonici, canaglia! Avevate da mangiare e ce lo negavate! Borbonici della malora, che vi porti via il diavolo!</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-84" title="84"></span>Ma fra quelle voci irritate, furiose, una vocina sorse:</p>
+      <p class="pnext">— Viva Garibaldi!</p>
+      <p class="pnext">La piccolina, in mezzo ai Garibaldini, agitava il suo cappelluccio col pomo di seta tricolore. Mentre la baciavano, levandola su in trionfo, ella strillava sempre. La madre piangeva.</p>
+      <div class="align-center auto-scaled figure" style="width: 41%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_085.jpg" /></div>
+      <p class="pfirst"><span class="invisible pageno target" id="page-85" title="85"></span> <span class="invisible pageno target" id="page-86" title="86"></span></p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="center large pfirst"><span class="invisible pageno target" id="page-87" title="87"></span><sub class="subscript">*</sub><sup class="superscript">*</sup><sub class="subscript">*</sub></p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="pfirst">Il cannoneggiamento cominciò alle tre del pomeriggio. Ventaroli è sulla collina, l'eco dei cannoni vi si ripercuoteva fortemente. Donna Cariclea era salita sopra una torricella, donde si vedeva tutta la valle; ma nulla si scorgeva. Dove si battevano? Con che esito? Era impossibile saper nulla. I quaranta Garibaldini erano andati via allegramente, dopo aver pranzato, coi loro scarponi rotti, coi loro vecchi fucili; e tutte <span class="invisible pageno target" id="page-88" title="88"></span>le case di Ventaroli si erano chiuse, i portoni erano sbarrati. Quando cominciò il cannone, Pasqualina Cresce, che aveva paura dei tuoni, aveva cacciato il capo sotto i cuscini; il vecchio Nicola Borrelli, che aveva fatto il soldato, tendeva l'orecchio per sentire donde venisse; e la sorella dell'emigrato, Rosina, una fiera donna, era venuta nello stanzone e aveva accese due altre candele alla Vergine, per conto suo, perchè vincessero i Garibaldini. Donna Cariclea fremeva: invano aguzzava gli occhi, sulla torricella, ma non un'anima passava nella valle, non un carro, non un contadino; un <span class="invisible pageno target" id="page-89" title="89"></span>deserto, un paese morto. Il cannone si arrestava, talvolta, per cinque minuti, ma dopo riprendeva con più vigore. Stette tre ore lassù, sino all'imbrunire. E sempre il cannone: talvolta allegro, talvolta lungo e lugubre. Poi tacque. Era notte. Nessuna notizia. Era perduta o salvata la patria?</p>
+      <p class="pnext">Ma don Ottaviano, le vecchie zie, le giovani spose, le serve erano stanche di quella tremenda giornata; e, malgrado il terrore dell'indomani, malgrado la suprema incertezza, che era anche un supremo pericolo, andarono a dormire. Donna Cariclea si ritirò nella sua stanzuccia, <span class="invisible pageno target" id="page-90" title="90"></span>che era proprio sopra l'arco del portone. Aveva appena appena congiunte le mani della piccolina per la preghiera della sera, quando, nel silenzio profondo del villaggio, si udì un galoppo di cavallo; veniva verso la casa. E subito dopo un fievole colpo di martello risuonò. Donna Cariclea trasalì. Che doveva fare? Si affacciò senza far rumore alla finestra: nell'ombra si vedeva un cavallo e un cavaliere, ma non si distingueva altro. Erano immobili, aspettavano. Ma passò qualche minuto; il cavaliere non picchiò di nuovo, aspettando, pazientemente.</p>
+      <p class="pnext">— Chi sarà mai? — pensava <span class="invisible pageno target" id="page-91" title="91"></span>donna Cariclea, tutta trepidante.</p>
+      <p class="pnext">E richiuse la finestra, senza far rumore. Ma quel cavaliere, là innanzi al portone, nella notte, le dava tormento. Riaprì, domandò sottovoce:</p>
+      <p class="pnext">— Chi è?</p>
+      <p class="pnext">— Sono io — disse una nota voce.</p>
+      <p class="pnext">— Voi, maggiore?</p>
+      <p class="pnext">— Aprite, signora, per carità!</p>
+      <p class="pnext">Ella prese un lume, attraversò due o tre stanze, scese per le scale, andò a tirare i grossi catenacci. Silenziosamente il maggiore era disceso da cavallo e se lo trasse dietro, nel cortile; lo legò a un anello di ferro. La signora <span class="invisible pageno target" id="page-92" title="92"></span>andava innanzi e il maggiore dietro; quando furono nella stanzetta, il maggiore le fece cenno di chiudere la porta, a chiave. La bimba, già in letto, guardava tutto questo con un par d'occhioni spaventati.</p>
+      <p class="pnext">— Signora — disse il maggiore — io sono nelle vostre mani.</p>
+      <p class="pnext">Ella lo guardò, sgomenta. L'ufficiale svizzero era in uniforme, tutto gallonato, tutto scintillante di oro: ma teneva il capo abbassato sul petto.</p>
+      <p class="pnext">— Che avete fatto? — chiese ella duramente.</p>
+      <p class="pnext">— Sono scappato, signora. Fuggo da tre ore; due ore siamo stati nascosti in una macchia, il mio cavallo e io.</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-93" title="93"></span>— Non avete preso parte alla battaglia?</p>
+      <p class="pnext">— No, signora, vi dico che sono scappato.</p>
+      <p class="pnext">— E perchè? — chiese ella a quel colosso.</p>
+      <p class="pnext">— Perchè avevo paura — disse lui, semplicemente.</p>
+      <p class="pnext">— Oh! — fece soltanto lei, celandosi il volto per ribrezzo.</p>
+      <p class="pnext">— Avete ragione — disse lui, umilmente. — Ma la paura non si vince: sono fuggito.</p>
+      <p class="pnext">— Non vi vergognate, non vi vergognate? — chiese ella, tremando di emozione.</p>
+      <p class="pnext">Egli non rispose. Si vergognava, forse. Stava buttato sulla sedia, grande corpo accasciato dalla viltà.</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-94" title="94"></span>— E i vostri soldati?</p>
+      <p class="pnext">— Chissà! — disse il maggiore, levando le spalle.</p>
+      <p class="pnext">— Chi ha vinto, dunque?</p>
+      <p class="pnext">— Non lo so. Avranno vinto gli Italiani.</p>
+      <p class="pnext">— E siete fuggito?</p>
+      <p class="pnext">— Già. Vi ripeto, avevo paura. Che m'importa della battaglia? Voi dovete salvarmi signora.</p>
+      <p class="pnext">— Io?</p>
+      <p class="pnext">— Sì. Dovete farmi fuggire. Voglio ritornare a Napoli, in sicurezza. Ho famiglia io: ho figli io: che me ne importa di Francesco II? Salvatemi, signora, ve ne scongiuro.</p>
+      <p class="pnext">— E perchè dovrei farlo?</p>
+      <p class="pnext">— Perchè siete donna, <span class="invisible pageno target" id="page-95" title="95"></span>perchè siete buona, perchè anche voi avete una figlia... e capite...</p>
+      <p class="pnext">— Siete un nemico, voi.</p>
+      <p class="pnext">— V'ingannate, sono un disertore.</p>
+      <p class="pnext">— Ebbene?</p>
+      <p class="pnext">— Significa che io temo egualmente i Borbonici, come i Garibaldini. Se mi trovano i vostri, sono un nemico e mi fucilano; se mi trovano i Borbonici, sono un disertore e mi fucilano. Ecco perchè vi chieggo di salvarmi.</p>
+      <p class="pnext">— Se rientrate a Napoli vi fucileranno.</p>
+      <p class="pnext">— Garibaldi è buono — disse umilmente il maggiore svizzero.</p>
+      <p class="pnext">— È una vergogna — ripetette lei duramente.</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-96" title="96"></span>— Lo so; ma che posso farci? Salvatemi voi.</p>
+      <p class="pnext">— Stamane avreste lasciato morire la mia bambina.</p>
+      <p class="pnext">— Che potevo fare?</p>
+      <p class="pnext">— Eppure il re contava su voialtri! Che uomini siete dunque?</p>
+      <p class="pnext">— O signora mia, per carità, non ne parliamo; se avete viscere di madre, trovatemi un mezzo per fuggire.</p>
+      <p class="pnext">— Io non ne ho.</p>
+      <p class="pnext">— Lasciatemi stare qua, in questa stanza.</p>
+      <p class="pnext">— Se vi ci trovano, siamo perduti tutti.</p>
+      <p class="pnext">— È vero — disse lui, dolorosamente.</p>
+      <p class="pnext">La bambina aveva ascoltato <span class="invisible pageno target" id="page-97" title="97"></span>tutto il discorso, guardando ora sua madre, ora il maggiore. Adesso, ambedue tacevano. Egli era immerso nel più profondo avvilimento; ella era combattuta da tanti sentimenti diversi.</p>
+      <p class="pnext">— Ho anch'io un bimbo di questa età — mormorò il maggiore. — Non lo vedrò più, forse.</p>
+      <p class="pnext">— Aspettatemi qui — disse donna Cariclea, decidendosi.</p>
+      <p class="pnext">E uscì. Il maggiore si era inginocchiato vicino al letto e aveva baciata la piccolina. Donna Cariclea tardava. Alla fine, muta, lieve come un'ombra, ritornò. Portava un involto di panni:</p>
+      <p class="pnext">— Smorzerò il lume&nbsp;— <span class="invisible pageno target" id="page-98" title="98"></span>disse, con voce breve, superando ogni ritrosia di donna — toglietevi l'uniforme e mettete questi abiti.</p>
+      <p class="pnext">Così fece. Dopo pochi momenti ella riaccese il lume; il maggiore era vestito da contadino e l'uniforme giaceva per terra. Egli se ne stava tutto umile, tutto contrito.</p>
+      <p class="pnext">— Bisogna nascondere quest'uniforme e questa spada — disse lui, — trovandosi, sareste perduta.</p>
+      <p class="pnext">— È vero — disse lei. — Spezzate dunque la spada.</p>
+      <p class="pnext">Senza esitare, egli tentò di spezzare la spada sul ginocchio. Ma la buona lama resisteva. Alla fine, con la tensione <span class="invisible pageno target" id="page-99" title="99"></span>dei suoi muscoli robusti, la spezzò.</p>
+      <p class="pnext">— Scucite i galloni dall'uniforme — ordinò donna Cariclea.</p>
+      <p class="pnext">Pazientemente, il maggiore strappò i galloni del suo uniforme. Ella raccolse tutto.</p>
+      <p class="pnext">— Andiamo a buttarli via.</p>
+      <p class="pnext">Egli la seguì per le scale; essa lo guidava con un fioco cerino. Scesero nel cortile macchinalmente, ella buttò i frammenti della spada nel profondo pozzo, che era in mezzo al cortile. Il maggiore sospirò di sollievo. Poi passarono vicino alla conserva dell'olio; ella vi buttò l'uniforme disadorna di galloni. Alla fine, passando presso un <span class="invisible pageno target" id="page-100" title="100"></span>mucchio di letame, ella vi buttò i galloni, rivoltandoli con una pala, per farli andare sotto.</p>
+      <p class="pnext">— Dio mio, ti ringrazio! — esclamò il maggiore.</p>
+      <p class="pnext">— E il cavallo? che facciamo del cavallo? Se lo trovano siamo perduti.</p>
+      <p class="pnext">— È vero — mormorò lui — Bisogna farlo scomparire. Ora lo ammazzo.</p>
+      <p class="pnext">— Con che?</p>
+      <p class="pnext">— Non ho armi, è vero.</p>
+      <p class="pnext">Andarono presso il cavallo. La buona bestia nitrì; il maggiore fremette di paura. Poi, sciolse le redini dall'anello, trasse il cavallo fuori del portone e rinchiuse il portone. Stettero a sentire, il <span class="invisible pageno target" id="page-101" title="101"></span>maggiore e donna Cariclea. Per un pezzo il cavallo scalpitò sulla soglia, battè col capo contro il legno della porta; ma poi ne sentirono il galoppo furioso e pazzo per la campagna.</p>
+      <p class="pnext">— Domani la campagna sarà piena di cavalli fuggenti — mormorò il disertore.</p>
+      <p class="pnext">— Andiamo su — fece lei.</p>
+      <p class="pnext">Risalirono. La bimba era sempre sveglia. Donna Cariclea si chinò e baciò sulla guancia la sua figliuola. In atteggiamento confuso il maggiore aspettava.</p>
+      <p class="pnext">— Sentite — disse donna Cariclea. — Io ho fatto svegliare Peppino, il boaro. È una creatura bestiale, ostinata <span class="invisible pageno target" id="page-102" title="102"></span>e fedele. Farà tutto quello che gli ho detto. Ha messa una scala alla finestra del grande salone. Dà sull'orto. Voi scenderete per quella scala; siete forte, mi pare?</p>
+      <p class="pnext">— Fortissimo.</p>
+      <p class="pnext">— Bene; andrete a traverso i campi, ma senza affrettarvi, dovrete avere il passo dei contadini che vanno al mercato. Parlate poco con Peppino, i contadini non parlano. Avete i baffi di un signore e di un militare; ecco le forbici, tagliateveli.</p>
+      <p class="pnext">Egli eseguì senz'esitare.</p>
+      <p class="pnext">— Bene. Andrete a passare il Volturno, molto al disotto di Capua; là troverete una scafa, passerete il fiume e vi <span class="invisible pageno target" id="page-103" title="103"></span>recherete a Napoli. Peppino vi lascierà, tornerà indietro, non dirà mai una parola con nessuno. Noi, probabilmente, non c'incontreremo più. Tanto meglio. Ma se ci dovessimo mai incontrare, badate bene, non mi ringraziate, non mi tendete la mano, non mi salutate, non mostrate di conoscermi. Se lo faceste, vi darei del disertore sulla faccia. Addio, dunque, signore.</p>
+      <p class="pnext">— Addio, signora.</p>
+      <p class="pnext">E fece per accostarsi al letto, donde la bimba lo guardava, e voleva baciarla.</p>
+      <p class="pnext">— No — fece la madre opponendosi.</p>
+      <p class="pnext">Egli uscì. Donna Cariclea lo sentì scambiare una parola <span class="invisible pageno target" id="page-104" title="104"></span>con Peppino che l'aspettava pazientemente, seduto nell'ombra dello stanzone; udì lo scricchiolìo della scala sotto quel corpo pesante; udì i due passi quasi allontanarsi. Allora si accostò al letto della sua piccolina, si curvò su lei:</p>
+      <p class="pnext">— Pensa che questo sia un sogno, Caterina: dimentica, dimentica tutto, piccolina mia.</p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="center pfirst">.&nbsp;&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;.</p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="pfirst">Ma Caterina non ha potuto dimenticare.</p>
+    </div>
+    <div class="level-2 section" id="id4">
+      <span id="il-mio-segreto"></span>
+      <h2 class="center level-2 pfirst section-title title"><span class="invisible pageno target" id="page-105" title="105"></span>Il mio segreto.</h2>
+      <div class="align-center auto-scaled figure" style="width: 64%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_106.jpg" /></div>
+      <div class="clearpage"></div>
+      <p class="pfirst"><span class="invisible pageno target" id="page-106" title="106"></span> <span class="invisible pageno target" id="page-107" title="107"></span></p>
+      <div class="align-center auto-scaled figure" style="width: 64%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_107.jpg" /></div>
+      <div class="vspace" style="height: 2em"></div>
+      <p class="pfirst">Sentite ora il mio segreto, uno spaventoso segreto che rode l'anima. L'ho taciuto sinora per l'orrore della mia mostruosità. Ma dentro, lo spasimo mio assume mille forme, io sento due martellini battermi sul cuore mortificandolo di colpi; io ho una vite d'acciaio che mi rotea nel petto come un cavaturacciolo; <span class="invisible pageno target" id="page-108" title="108"></span>io ho un migliaio di spilli ficcati sotto il cranio; io ho un chiodo confitto nella tempia dritta. Eppure in questa lunga agonia, io non posso morire; dalla febbre il mio sangue si rinnovella, dalla tortura le mie fibre si disseccano, ma si rinvigoriscono dall'incitamento; la forza dei miei nervi si raddoppia. Morire no, non mi è concesso. Altri dovrebbero morire, meco. Scrivo il mio segreto non per sollievo, perchè non ne spero, ma perchè si sappia la verità del caso mio.</p>
+      <p class="pnext">Sentite. Non è vero che io sia pazza; io vivo, sento, ricordo e ragiono. Quelli che mi tengono imprigionata nel manicomio, s'ingannano.</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-109" title="109"></span>Mai ho posseduto tanta lucidità di mente, tanta solidità di cervello; mai ho contemplato con tanta serenità di dolore la mia sventura. Non sono pazza... È inutile la doccia sulla testa, il camerotto foderato di materassi, il bagno caldo, la sorveglianza continua. Questo non può guarirmi, perchè non sono pazza. Per me non ci vuole il medico, ma il prete. Deve venire il prete con il libro santo dei Vangeli, con la stola ricamata d'oro, con l'acqua benedetta. Deve leggere le preghiere per scongiurare gli spiriti maligni, mettermi sul capo la stola e aspergermi di acqua santa; deve <span class="invisible pageno target" id="page-110" title="110"></span>battersi il petto, inginocchiarsi, pregare l'aiuto del Signore su me. Poichè io non sono pazza, ma qualcuno si è impossessato di me: io non sono pazza, ma qualcuno è entrato in me, vive con me. Dentro l'anima mia vi è un'altr'anima. Dentro la mia volontà vi è un'altra volontà. Dentro la mia ragione vi è un'altra ragione. Bisogna esorcizzarmi, bisogna cacciar via la mia nemica, togliermi quest'altra anima che mi riempie di terrore. Noi siamo due..</p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="center large pfirst"><span class="invisible pageno target" id="page-111" title="111"></span><sub class="subscript">*</sub><sup class="superscript">*</sup><sub class="subscript">*</sub></p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="pfirst">Quanto tempo è che ho veduto lei, l'altra, per la prima volta? Non so, la data non potrei dirla, perchè mi sfugge. Certo era un tramonto più rosso d'autunno; io correva nelle vie infangate, affrettandomi a una casa dove qualcuno che mi amava moriva. Correvo col capo chino sotto la pioggia mormorando le parole di consolazione e di perdono prima di giungere. D'un tratto, alzando gli occhi sotto la luce rossastra di un <span class="invisible pageno target" id="page-112" title="112"></span>fanale a gas, vidi camminarmi accanto una figura femminile. Era una donna di mezza statura, col volto pallido e allungato, sciupato dall'età, dalle sofferenze; ma in quel volto consumato ardevano gli occhi neri, bruciavano di sangue le labbra. Era vestita tutta di nero, il nero dei suoi occhi; portava al collo, come spillo, un ramoscello di corallo rosso come le labbra. Camminava accanto a me, guardando la terra; un sol momento mi alzò gli occhi in viso, ma li riabbassò subito. Io fui colpita da questa apparizione e distesi la mano quasi per toccarla, ma ella si allontanò rapidamente. La seguii <span class="invisible pageno target" id="page-113" title="113"></span>quasi per istinto senza saper perchè, presa da necessità di andare dove andava lei, di fare quello che lei faceva. La seguii con gli occhi fissi nella sua figura bruna, raggiungendola ogni tanto per vedere quello sguardo nero e ardente, quelle labbra febbricitanti, quell'abito nero come l'occhio, quel ramo di corallo rosso come le labbra. Ella se ne andò per le strade con il suo passo ritmico, fermandosi innanzi alle mostre delle botteghe, salutando qualche creatura ignota, fermandosi a discorrere con qualche essere volgare. Io feci, dietro a lei, tutto quello che essa fece. Ella prese la <span class="invisible pageno target" id="page-114" title="114"></span>via del teatro, salì le scale, entrò in un palco e si pose immediatamente a dardeggiare la folla col suo sguardo nero. Si pose subito a ridere con le sue labbre di sangue; io in un palco dirimpetto a lei, imitandola, guardai sfacciatamente la folla e risi, risi sempre. D'un tratto ella scomparve, io m'abbandonai in una atonia come se mi mancassero gli spiriti, poi mi risvegliai nell'amarezza saliente dei rimorsi. L'amico che m'aspettava, a cui dovevo portare le parole di consolazione e di perdono, era morto, solo, mentre io rideva al teatro.</p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="center large pfirst"><span class="invisible pageno target" id="page-115" title="115"></span><sub class="subscript">*</sub><sup class="superscript">*</sup><sub class="subscript">*</sub></p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="pfirst">Io non amavo quell'uomo. Anzi non amavo nessuno in quel tempo. La mia indifferenza in fatto di sentimento era serena; non amavo, non avevo il rimpianto dell'amore. Poi quell'uomo era un essere volgare e miserabile di cui io vedeva tutta la miseria, tutta la volgarità. Il suo amore fatto di vanità, di capriccio, di puntiglio, non aveva il potere di irritarmi, ma aveva il potere di nausearmi. Le sue parole <span class="invisible pageno target" id="page-116" title="116"></span>mi lasciavano inerte, le sue lettere non mi scuotevano, le sue mani che stringevano le mie non mi facevano impallidire. Odiarlo non potevo, e amarlo neppure: tutta la meschinità, tutta la bassezza del suo spirito, la misuravo. Egli, divorato dal desiderio, ch'era vanità, fremeva di rabbia, fremeva di falso amore e pregava e scongiurava, versava lagrime di dispetto. Io mi rifiutava; tranquilla, immobile, sorridente, quasi insolente, m'immergevo sempre più in quella indifferenza che è il dono dei forti. Finchè lui un giorno, in una scena di collera, mi disse:</p>
+      <p class="pnext">— O domani o mai più.</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-117" title="117"></span>— Mai più — dissi io freddamente.</p>
+      <p class="pnext">Il domani, nel pieno meriggio d'inverno, io passeggiava nella campagna, trasalendo d'emozione per la maestà del fiume che se ne andava lento al mare, per gli anemoni crescenti nell'erba umida, per i piccoli salici neri che si piegavano brulli, quasi spinosi, per gli uccelli che stridevano sul mio capo nella profondità dei cieli. Queste sensazioni giungevano squisite, soavi ai miei nervi equilibrati. Ero quieta. Quand'ecco nelle lontananze della sponda, nella gialla lucentezza meridiana, ella m'apparve col suo viso smorto, disfatto, dove <span class="invisible pageno target" id="page-118" title="118"></span>vivevano soltanto i carbonchi dei suoi occhi e la bocca rossa come un granato; vestita di nero, portando al collo un ramo di corallo rosso. Questa volta non mi guardò. Tutto il mio essere sobbalzò a lei. Mentre si dirigeva lentamente alla città, io la seguii passo per passo come una bestia ubbidiente. Vedevo con paura che ella andava al luogo del convegno con quell'uomo, ma istintivamente non potevo manifestare questa paura. Vidi con spavento che quell'uomo era là, che mi aspettava, che sorrideva di orgoglio. Egli non vedeva il fantasma che gli si accostava, vedeva me che mi <span class="invisible pageno target" id="page-121" title="121"></span>accostavo a lui per seguire il fantasma.</p>
+      <div class="align-center auto-scaled figure" style="width: 41%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_119.jpg" /></div>
+      <p class="pfirst">— Grazie — disse l'uomo trionfante.</p>
+      <p class="pnext">Il fantasma sorrise dolcemente, ed io che volevo urlare di dolore, sorrisi di dolcezza.</p>
+      <p class="pnext">— Tu mi ami? — chiese l'uomo.</p>
+      <p class="pnext">— Ti amo — mormorò il fantasma.</p>
+      <p class="pnext">Io, cui sulle labbra si affollavano gli insulti, dissi a voce alta:</p>
+      <p class="pnext">— Ti amo.</p>
+      <p class="pnext">— Mi amerai sempre?</p>
+      <p class="pnext">— Sempre — rispose il fantasma.</p>
+      <p class="pnext">Io, che agonizzavo, risposi:</p>
+      <p class="pnext"><span class="invisible pageno target" id="page-122" title="122"></span>— Sempre.</p>
+      <p class="pnext">— Lo giuri sulla Madonna?</p>
+      <p class="pnext">— Lo giuro sulla Madonna — susurrò l'ombra.</p>
+      <p class="pnext">Io, che avevo il terrore del sacrilegio, bestemmiai:</p>
+      <p class="pnext">— Lo giuro sulla Madonna.</p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="center large pfirst"><span class="invisible pageno target" id="page-123" title="123"></span><sub class="subscript">*</sub><sup class="superscript">*</sup><sub class="subscript">*</sub></p>
+      <div class="vspace" style="height: 1em"></div>
+      <p class="pfirst">Ora mi dicono pazza. Pensate che ho trascinato due anni la catena di un amore falso e volgare, che ho mentito due anni, che ho tollerato due anni la menzogna, perchè non mi amava, come io non l'amavo. Pensate al disgusto, al ribrezzo, alla stanchezza di due anni, ai giuramenti bugiardi fatti e ricevuti, ai trasporti fittizii, ai baci inutili e fiacchi, agli entusiasmi posticci, a questa commedia piena di fango. <span class="invisible pageno target" id="page-124" title="124"></span>Era per lei tutto. Per fare quello che ella faceva, per dire quello ch'ella diceva, per seguirla, per imitarla. Era l'incantesimo di questa fata, di questa strega, di questa maliarda. Era il fascino, il filtro; avvinghiata ad essa che rappresentava la bugia e il tradimento, io sono stata la bugia e il tradimento.</p>
+      <p class="pnext">Nel tempo, accadde altro. Un altro uomo mi amava veramente, con la lealtà spirituale delle anime elette; io lo amava con l'umiltà profonda del cuore che cerca riabilitarsi. Le nostre anime vibravano all'unisono nell'armonia potente dell'amore; si fondevano meravigliosamente <span class="invisible pageno target" id="page-125" title="125"></span>nell'armonia dell'amore; era un effetto solo, completo, tutto divino e tutto umano. Ma la celestiale fusione durò poco. In un'ora suprema, mentre egli mi parlava soavemente, vidi comparire tra noi la donna dall'abito nero, che portava al collo un ramoscello di corallo rosso. Questa volta i soavi occhi lampeggiavano malignamente, le sue labbra di garofano sogghignavano. Egli mi parlava d'amore ed ella ghignava, ghignava.</p>
+      <p class="pnext">— Non ti credo — rispose a quell'uomo che diceva la verità.</p>
+      <p class="pnext">Così l'amore nostro divenne uno spasimo. Dietro <span class="invisible pageno target" id="page-126" title="126"></span>il volto di lui, onesto e buono, io vedeva l'ovale sciupato della donna che ghignava; egli diceva un <em class="italics">sì</em> franco, sincero, e l'eco del fantasma era un <em class="italics">no</em> duro; egli mi accarezzava col suo sguardo innamorato, ed ella lampeggiava ferocemente gli occhi.</p>
+      <p class="pnext">— Non ti credo, non ti credo — ripetevo a quell'uomo, io diventata malvagia e scettica.</p>
+      <p class="pnext">Poi egli non credette più a me, mi vedeva sempre distratta, assorbita, scossa da subitanee paure, o perduta in esaurimenti mortali.</p>
+      <p class="pnext">— Tu non mi ami, tu sei lontana di qui: la tua anima <span class="invisible pageno target" id="page-127" title="127"></span>è assente; oh ritorna, ritorna! — egli mi supplicava.</p>
+      <p class="pnext">Eppure ci amavamo: la maga pallida dalle labbra di carminio, che ci scherniva, si metteva fra noi e ne faceva gelare il sangue, e rendeva deboli i nostri baci e fioche le voci. Io soffriva infinitamente più di lui, io che vedevo la maga sedersi accanto a noi, io che sentivo lo spavento di questo spettro salirmi al cervello e farmi delirare. Io che giunsi fino ad essere gelosa di quel fantasma, a cui mi sembrava che egli dirigesse le sue parole di amore: io, che in uno scoppio di gelosia furiosa, gridai:</p>
+      <p class="pnext">— Tu m'inganni, tu ne <span class="invisible pageno target" id="page-128" title="128"></span>ami un'altra, tu ami una donna pallida, sfinita, cogli occhi neri, le labbra sanguigne, la veste nera, il ramo di corallo rosso. Tu m'inganni, tu mi tradisci, tu ami un'altra!</p>
+      <p class="pnext">Egli mi guardò trasognato.</p>
+      <p class="pnext">— Tu sei quella — disse semplicemente.</p>
+      <p class="pnext">Mi condusse allo specchio; vidi nel cristallo una faccia smorta, consunta dall'età, dalla sofferenza, due occhi neri, ardenti, due labbra brucianti, una veste nera, un ramo di corallo rosso. Vidi la sua figura, che era la mia figura; urlai come una bestia:</p>
+      <p class="pnext">— Non sono pazza, non è la mia testa che devono curare, ma è la più fiera nemica <span class="invisible pageno target" id="page-129" title="129"></span>che è entrata in me; il fantasma si è messo nell'anima mia. L'altra non vuole andarsene, vuol vivere in me, così siamo due; bisogna esorcizzarmi; chiamate un prete, e dica sul mio capo le parole sacre della preghiera che libera le anime.</p>
+      <div class="vspace" style="height: 2em"></div>
+      <div class="align-center auto-scaled figure" style="width: 38%"><img class="align-center" style="display: block; width: 100%" alt=" " src="images/ill_011.jpg" /></div>
+      <div class="clearpage"></div>
+      <p class="center pfirst x-large"><span class="invisible pageno target" id="page-131" title="131"></span><strong class="bold">Piccola Collezione «Margherita»</strong></p>
+      <div class="vspace" style="height: 2em"></div>
+      <div class="align-None center container">
+        <p class="pfirst">Ogni volume illustr. Una lira</p>
+        <p class="pnext">Volumi pubblicati:</p>
+        <div class="vspace" style="height: 1em"></div>
+        <p class="pfirst"><strong class="bold">1ª Serie.</strong></p>
+        <p class="pnext"><span class="small-caps">Edmondo De Amicis</span> — <em class="italics">In America.</em></p>
+        <p class="pnext"><span class="small-caps">E. Scarfoglio</span> — <em class="italics">Il Cristiano errante.</em></p>
+        <p class="pnext"><span class="small-caps">Giuseppe De' Rossi</span> — <em class="italics">Le due colpe.</em></p>
+        <p class="pnext"><span class="small-caps">Matilde Serao</span> — <em class="italics">Donna Paola.</em></p>
+        <p class="pnext"><span class="small-caps">Ugo Ojetti</span> — <em class="italics">L'onesta viltà.</em></p>
+        <p class="pnext"><span class="small-caps">Cesare Pascarella</span> — <em class="italics">Il Manichino.</em></p>
+        <p class="pnext"><span class="small-caps">A. G. Barrili</span> — <em class="italics">Una notte d'estate.</em></p>
+        <p class="pnext"><span class="small-caps">V. Bersezio</span> — <em class="italics">La parola della morta.</em></p>
+        <p class="pnext"><span class="small-caps">Paolo Mantegazza</span> — <em class="italics">Un bacio in tre.</em></p>
+        <p class="pnext"><span class="small-caps">Scipio Sighele</span> — <em class="italics">La donna nova.</em></p>
+        <div class="vspace" style="height: 1em"></div>
+        <p class="pfirst"><strong class="bold">2ª Serie.</strong></p>
+        <p class="pnext"><span class="small-caps">E. Panzacchi</span> — <em class="italics">Le donne ideali.</em></p>
+        <p class="pnext"><span class="small-caps">Egisto Roggero</span> — <em class="italics">L'eredità del genio.</em></p>
+        <p class="pnext"><span class="small-caps">Cesare Imperiale</span> — <em class="italics">L'ultima crociera.</em></p>
+        <p class="pnext"><span class="small-caps">Michele Lessona</span> — <em class="italics">Memorie d'un professore.</em></p>
+        <p class="pnext"><span class="small-caps">Giustino Ferri</span> — <em class="italics">Il castello fantasma.</em></p>
+        <p class="pnext"><span class="small-caps">L. Stecchetti</span> — <em class="italics">Dal primo all'ultimo amore.</em></p>
+        <div class="vspace" style="height: 1em"></div>
+        <p class="pfirst">In corso di stampa:</p>
+        <p class="pnext"><span class="small-caps">Corrado Ricci</span> — <em class="italics">L'ebreo errante.</em></p>
+        <p class="pnext"><span class="small-caps">E. Panzacchi</span> — <em class="italics">Poeti innamorati.</em></p>
+        <p class="pnext"><span class="small-caps">Diego Angeli</span> — <em class="italics">Guida sentimentale di Roma.</em></p>
+        <p class="pnext"><span class="small-caps">L. A. Vassallo</span> — <em class="italics">L'arte di farsi fotografare.</em></p>
+        <p class="pnext"><span class="small-caps">L. Capuana</span> — <em class="italics">Bestia.</em></p>
+        <p class="pnext"><span class="small-caps">Giovanni Faldella</span> — <em class="italics">La fiducia in Dio.</em></p>
+        <p class="pnext">Neera — <em class="italics">Donne dell'altro secolo.</em></p>
+      </div>
+      <div class="clearpage"></div>
+      <p class="center pfirst">Recenti pubblicazioni della Casa Editrice E. Voghera.</p>
+      <div class="vspace" style="height: 2em"></div>
+      <div class="align-None center container white-space-pre-line">
+        <p class="pfirst white-space-pre-line">JACK LA BOLINA<br />
+        (<em class="italics white-space-pre-line">A. V. Vecchj</em>)</p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><span class="white-space-pre-line x-large">MEMORIE</span><br />
+        <span class="white-space-pre-line x-large">DI UN</span><br />
+        <span class="white-space-pre-line x-large">LUOGOTENENTE DI VASCELLO</span></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">Prezzo L. 3,50</em></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">ROMA<br />
+        ENRICO VOGHERA<br />
+        tipografo-editore</p>
+      </div>
+      <div class="clearpage"></div>
+      <div class="align-None center container white-space-pre-line">
+        <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">ENRICO SIENKIEWICZ</em></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><span class="small-caps white-space-pre-line x-large">Il Protettore</span></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">ROMANZO</p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">Prima traduzione italiana<br />
+        con prefazione<br />
+        di<br />
+        <span class="small-caps white-space-pre-line">Domenico Ciàmpoli</span></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">Prezzo L. 2</em></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">ROMA<br />
+        ENRICO VOGHERA<br />
+        tipografo-editore</p>
+      </div>
+      <div class="clearpage"></div>
+      <div class="align-None center container white-space-pre-line">
+        <p class="pfirst white-space-pre-line">DOMENICO CIÀMPOLI</p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><span class="white-space-pre-line x-large">L'INVISIBILE</span></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">ROMANZO</p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">Prezzo Lire 3,50</em></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">ROMA<br />
+        ENRICO VOGHERA<br />
+        tipografo-editore.</p>
+      </div>
+      <div class="clearpage"></div>
+      <div class="align-None center container white-space-pre-line">
+        <p class="pfirst white-space-pre-line">I DRAMMI<br />
+        <span class="small white-space-pre-line">DELLA</span><br />
+        <span class="white-space-pre-line x-large">SCHIAVITÙ</span></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">DI</p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">EMILIO SALGARI</em></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">con<br />
+        Illustrazioni di <span class="small-caps white-space-pre-line">G. G. Bruno</span></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">Prezzo Lire 3</em></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">ROMA<br />
+        ENRICO VOGHERA<br />
+        tipografo-editore</p>
+      </div>
+      <div class="clearpage"></div>
+      <div class="align-None center container white-space-pre-line">
+        <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">NEERA</em></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><span class="white-space-pre-line x-large">LYDIA</span></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">ROMANZO</p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">II EDIZIONE.</p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">Prezzo Lire 2,50</em></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line">ROMA<br />
+        ENRICO VOGHERA<br />
+        tipografo-editore</p>
+      </div>
+      <div class="clearpage"></div>
+      <div class="align-None center container white-space-pre-line">
+        <p class="pfirst white-space-pre-line"><strong class="bold white-space-pre-line">Prossime pubblicazioni:</strong></p>
+        <div class="vspace white-space-pre-line" style="height: 1em"></div>
+        <p class="pfirst white-space-pre-line"><em class="italics white-space-pre-line">Giuseppe De Rossi</em><br />
+        SANT'ELENA<br />
+        <em class="italics white-space-pre-line">Emilio Del Cerro</em><br />
+        COSPIRAZIONI ROMANE<br />
+        <em class="italics white-space-pre-line">Adolfo Giaquinto</em><br />
+        SONETTI ROMANESCHI</p>
+      </div>
+      <div class="vspace" style="height: 2em"></div><!-- -*- encoding: utf-8 -*- -->
+      <div class="backmatter"></div>
+      <div class="cleardoublepage"></div>
+    </div>
+  </div>
+</body>
+</html>
